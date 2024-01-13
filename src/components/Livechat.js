@@ -10,7 +10,7 @@ const Livechat = () => {
   useEffect(() => {
     const i = setInterval(() => {
       // Api polling
-    //   console.log("api Polling");
+      //   console.log("api Polling");
       dispatch(
         addMessage({
           name: generateRandomName(),
@@ -30,16 +30,19 @@ const Livechat = () => {
           ))}
         </div>
       </div>
-      <form className="border border-black w-full my-2 rounded-xl" onSubmit={(e)=>{
-        e.preventDefault();
-        dispatch(
+      <form
+        className="border border-black w-full my-2 rounded-xl"
+        onSubmit={(e) => {
+          e.preventDefault();
+          dispatch(
             addMessage({
-                name:"Ashish Raghav",
-                message:liveMessages,
+              name: "Ashish Raghav",
+              message: liveMessages,
             })
-        )
-        setliveMessages("");
-      }}>
+          );
+          setliveMessages("");
+        }}
+      >
         <input
           className=" w-80 rounded-lg ml-2 p-2 my-1"
           type="text"
